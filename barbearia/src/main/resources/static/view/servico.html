@@ -5,20 +5,25 @@
 <h1>Cadastro de Serviços</h1>
 <br>
 <div>
-	ID:<input type="text" ng-model="servico.id">
-	<br>
-	<br>
-	Descrição:<input type="text" ng-model="servico.descricao">
-	<br>
-	<br>
-	Valor:<input type="text" ng-model="servico.valor">
-	<br>
-	<br>
-	Duração:<input type="text" ng-model="servico.duracao">
 	
-	<input type="button" value="Salvar" ng-click="salvarServico()">
-	<input type="button" value="Cancelar" ng-click="cancelar()">
-	
+	<div>
+		<form novalidate name="formServico">
+			ID:<input type="text" ng-model="servico.id" required name="txtId">
+			<span ng-show="formServico.txtId.$error.required && formServico.txtId.$dirty" >Required!</span><br>
+			<br>
+			<br>
+			Descrição:<input type="text" ng-model="servico.descricao">
+			<br>
+			<br>
+			Valor:<input type="text" ng-model="servico.valor">
+			<br>
+			<br>
+			Duração:<input type="text" ng-model="servico.duracao">
+			
+			<input type="button" value="Salvar" ng-click="salvarServico()" ng-disabled="formServico.txtId.$error.required && formServico.txtId.$dirty">
+			<input type="button" value="Cancelar" ng-click="cancelar()">
+		</form>
+	</div>
 	<h1>Lista de Serviços</h1>
 	<input type="button" value="Recarregar" ng-click="carregarServicos()">
 	<h2>Quantidade : {{servicos.length}}</h2>
