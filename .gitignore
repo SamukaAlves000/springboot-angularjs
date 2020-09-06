@@ -1,0 +1,8 @@
+barbearia/.mvn
+barbearia/.settings
+barbearia/target
+.classpath
+.project
+HELP
+mvnw
+mvnw.cmd

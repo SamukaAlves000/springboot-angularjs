@@ -1,0 +1,33 @@
+<div>
+	
+	
+
+<h1>Cadastro de Serviços</h1>
+<br>
+<div>
+	ID:<input type="text" ng-model="servico.id">
+	<br>
+	<br>
+	Descrição:<input type="text" ng-model="servico.descricao">
+	<br>
+	<br>
+	Valor:<input type="text" ng-model="servico.valor">
+	<br>
+	<br>
+	Duração:<input type="text" ng-model="servico.duracao">
+	
+	<input type="button" value="Salvar" ng-click="salvarServico()">
+	<input type="button" value="Cancelar" ng-click="cancelar()">
+	
+	<h1>Lista de Serviços</h1>
+	<input type="button" value="Recarregar" ng-click="carregarServicos()">
+	<h2>Quantidade : {{servicos.length}}</h2>
+	<div ng-repeat="item in servicos">
+  		 {{ item.id + '|' + item.descricao }} 
+  		 <input type="button" value="Excluir" ng-click="deletarServico(item.id)">
+  		 <input type="button" value="Alterar" ng-click="preecherServico(item)">
+  		 <a href="servico/{{item.id}}">Detalhe</a>
+	</div>
+	
+</div>
+</div>
