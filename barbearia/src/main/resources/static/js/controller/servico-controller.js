@@ -52,6 +52,8 @@ app.controller("servicoController", function ($scope,$http) {
 				//$scope.servicos.push(response.data);
 				$scope.carregarServicos();
 				$scope.servico = {};
+				$scope.formServico.txtId.$setPristine(true);
+				
 				console.log(response.data);
 				console.log(response.status);
 				
