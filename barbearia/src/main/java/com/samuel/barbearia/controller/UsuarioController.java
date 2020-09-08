@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.samuel.barbearia.model.Usuario;
 import com.samuel.barbearia.service.UsuarioService;
 
-@RestController
-@RequestMapping("autenticar")
+@RestController("api")
+@RequestMapping("/usuarios")
 public class UsuarioController {
 	
 	@Autowired
@@ -31,5 +31,5 @@ public class UsuarioController {
 	public ResponseEntity<Usuario> save(@RequestBody Usuario entity) {
 		return new ResponseEntity<Usuario>(usuarioService.save(entity),HttpStatus.OK);
 	}
-
+	
 }

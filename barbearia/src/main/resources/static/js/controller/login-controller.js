@@ -1,10 +1,15 @@
-app.controller("loginController",function($scope){
+app.controller("loginController",function($scope,$http){
 	
 	$scope.usuario = {};
 	
 	$scope.autenticar = function(){
-		
-	console.log("Usuário:"+$scope.usuario.user +"| Senha:"+$scope.usuario.pass);
+		$http.post('/autenticar', $scope.usuario).then(
+			function(response){
+				
+			}, function(response){
+				
+			});
+
 	};
 	
 	

@@ -17,28 +17,28 @@ import com.samuel.barbearia.model.Servico;
 import com.samuel.barbearia.service.ServicoService;
 
 @RestController
-@RequestMapping("servicos")
+@RequestMapping("/api")
 public class ServicoController {
 	
 	@Autowired
 	ServicoService servicoService;
 	
-	@GetMapping
+	@GetMapping(value = "/servicos")
 	public ResponseEntity< List<Servico>> findAll() {
 		return new ResponseEntity<List<Servico>>(servicoService.findAll(),HttpStatus.OK);
 	}
 	
-	@GetMapping("/{id}")
+	@GetMapping(value = "/servicos/{id}")
 	public ResponseEntity<Servico> findById(@PathVariable Integer id) {
 		return new ResponseEntity<>(servicoService.findById(id).get(), HttpStatus.OK);
 	}
 	
-	@PostMapping
+	@PostMapping(value = "/servicos")
 	public ResponseEntity<Servico> save(@RequestBody Servico entity) {
 		return new ResponseEntity<Servico>(servicoService.save(entity),HttpStatus.OK);
 	}
 	
-	@DeleteMapping("/{id}")
+	@DeleteMapping(value = "/servicos/{id}")
 	public ResponseEntity<?> deleteById(@PathVariable Integer id) {
 		servicoService.deleteById(id);
 		return new ResponseEntity<>(HttpStatus.OK);

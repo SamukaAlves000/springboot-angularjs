@@ -20,6 +20,10 @@ public class UsuarioService {
 	public List<Usuario> findAll() {
 		return usuarioRepository.findAll();
 	}
+	
+	public Usuario buscaPorLogin(String login) {
+		return usuarioRepository.buscaPorLogin(login);
+	}
 
 	
 }
