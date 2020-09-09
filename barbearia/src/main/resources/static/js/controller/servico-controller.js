@@ -3,10 +3,13 @@ app.controller("servicoController", function ($scope,$http) {
 	$scope.servico = {};
 	
 	$scope.carregarServicos = function(){
+		
+		///token = localStorage.getItem("UserToken");
+		//$http.defaults.headers.common.Authorization = "Bearer "+ token;
 			// Simple GET request example:
 			$http({
 					  method: 'GET',
-					  url: 'http://localhost:8080/servicos'}).
+					  url: '/api/servicos'}).
 			then(function successCallback(response) {
 				$scope.servicos = response.data
 				console.log(response.data);
@@ -22,7 +25,7 @@ app.controller("servicoController", function ($scope,$http) {
 			// Simple POST request example:
 			$http({
 					  method: 'DELETE',
-					  url: 'http://localhost:8080/servicos/'+id
+					  url: '/api/servicos/'+id
 			}).
 			then(function successCallback(response) {
 				
@@ -44,7 +47,7 @@ app.controller("servicoController", function ($scope,$http) {
 			// Simple POST request example:
 			$http({
 					  method: 'POST',
-					  url: 'http://localhost:8080/servicos',
+					  url: '/api/servicos',
 					  data:$scope.servico
 			}).
 			then(function successCallback(response) {
