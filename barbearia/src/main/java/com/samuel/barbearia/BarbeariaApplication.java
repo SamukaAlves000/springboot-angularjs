@@ -6,6 +6,7 @@ import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 
 import com.samuel.barbearia.controller.TokenFilter;
+import com.samuel.barbearia.model.Servico;
 
 @SpringBootApplication
 public class BarbeariaApplication {
