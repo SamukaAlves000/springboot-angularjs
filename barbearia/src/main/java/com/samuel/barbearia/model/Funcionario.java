@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -35,5 +36,7 @@ public class Funcionario {
 			  joinColumns = @JoinColumn(name = "FUNCIONARIO_ID"), 
 			  inverseJoinColumns = @JoinColumn(name = "SERVICO_ID"))
     Set<Servico> servicos;
+	@OneToMany(mappedBy="funcionario")
+	Set<Atendimento> atendimentos;
 
 }

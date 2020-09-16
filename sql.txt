@@ -1,0 +1,38 @@
+SELECT * FROM tb_pessoa;
+SELECT * FROM tb_funcionario;
+SELECT * FROM tb_servico;
+SELECT * FROM tb_funcionario_servico
+
+SELECT * FROM tb_pessoa AS pes JOIN tb_funcionario AS fun ON pes.id = fun.pessoa_id;
+
+DELETE FROM tb_funcionario;
+DELETE FROM tb_pessoa;
+
+INSERT INTO tb_pessoa VALUES 
+(1,'Cruzeiro',null,'Campos Belos',null,null,null,'samuel@hotmail.com','Samuel Alves dos Santos','M',null,'GO'),
+(2,'Cruzeiro',null,'Campos Belos',null,null,null,'rafael@hotmail.com','Rafael Alves dos Santos','M',null,'GO'),
+(3,'Vila planalto',null,'Brasília',null,null,null,'bruno@hotmail.com','Bruno Oliveira de Souza','M',null,'DF'),
+(4,'Cruzeiro',null,'Campos Belos',null,null,null,'vandim@hotmail.com','Vanderlei Rodrigues','M',null,'GO'),
+(5,'Gama',null,'Brasília',null,null,null,'randris@hotmail.com','Randris Oliveira de Souza','M',null,'DF'),
+(6,'Cruzeiro',null,'Campos Belos',null,null,null,'kaio@hotmail.com','Kaio Henrique Machado','M',null,'GO');
+
+INSERT into tb_funcionario VALUES
+(1,3500.00,1),
+(2,2500.00,6);
+
+INSERT INTO tb_servico VALUES
+(1,'Corte Simples Máquina',30,15),
+(2,'Corte Degradê Máquina',45,20),
+(3,'Corte Degradê Máquina X Tesoura',45,25),
+(4,'Corte Tesoura',45,20),
+(5,'Corte completo Cabelo x Barba',60,30),
+(6,'Barba',30,10);
+
+INSERT INTO tb_funcionario_servico VALUES
+(1,1),
+(1,2),
+(1,3),
+(1,5),
+(2,1),
+(2,2),
+(2,6);

@@ -29,5 +29,7 @@ public class Servico {
 	private byte duracao;
 	@ManyToMany(mappedBy = "servicos")
     Set<Funcionario> funcionarios;
+	@ManyToMany(mappedBy = "servicos")
+    Set<Atendimento> atendimentos;
 	
 }
